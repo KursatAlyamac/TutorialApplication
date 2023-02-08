@@ -1,9 +1,8 @@
-import java.util.ArrayList;
+
 import java.util.Scanner;
 
 public class App {
 
-    private static ArrayList<Integer> array = new ArrayList<>();
 
     public static void main(String[] args) throws Exception {
 
@@ -59,11 +58,11 @@ public class App {
     private static void findOddEvenSum(int[] array) {
         int oddSum = 0;
         int evenSum = 0;
-        for (int i = 0; i < array.size(); i++) {
+        for (int i = 0; i < array.length; i++) {
             if (i % 2 == 0) {
-                evenSum += array.get(i);
+                evenSum += array[i];
             } else {
-                oddSum += array.get(i);
+                oddSum += array[i];
             }
         }
         System.out.println("Sum of elements with odd indexes: " + oddSum);
