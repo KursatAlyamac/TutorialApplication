@@ -1,6 +1,10 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
+
+    private static ArrayList<Integer> array = new ArrayList<>();
+
     public static void main(String[] args) throws Exception {
 
         boolean toContinue = true;
@@ -46,32 +50,35 @@ public class App {
 
         System.out.println(menu);
     }
+
     private static void findOddEvenSum() {
         int oddSum = 0;
         int evenSum = 0;
-        for (int i = 0; i < array.length; i++) {
-          if (i % 2 == 0) {
-            evenSum += array[i];
-          } else {
-            oddSum += array[i];
-          }
+        for (int i = 0; i < array.size(); i++) {
+            if (i % 2 == 0) {
+                evenSum += array.get(i);
+            } else {
+                oddSum += array.get(i);
+            }
         }
         System.out.println("Sum of elements with odd indexes: " + oddSum);
         System.out.println("Sum of elements with even indexes: " + evenSum);
     }
-    public int findMax(int[] arr){
+
+    public int findMax(int[] arr) {
         int max = arr[0];
-        for(int i = 1; i<arr.length;i++){
-            if(arr[i] > max){
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > max) {
                 max = arr[i];
             }
         }
         return max;
     }
-    public int findMin(int[] arr){
+
+    public int findMin(int[] arr) {
         int min = arr[0];
-        for(int i = 1; i<arr.length;i++){
-            if(arr[i] < min){
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < min) {
                 min = arr[i];
             }
         }
