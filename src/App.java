@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class App {
@@ -29,6 +30,15 @@ public class App {
         }
 
         scanner.close();
+    }
+
+    public static int[] createArray(int size) {
+        int[] returnArray = new int[size];
+        Random random = new Random();
+        for (int i = 0; i < size; i++) {
+            returnArray[i] = random.nextInt(101);
+        }
+        return returnArray;
     }
 
     public static void displayMenu(boolean isFirstTime) {
