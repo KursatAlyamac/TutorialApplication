@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -44,4 +45,23 @@ public class App {
 
         System.out.println(menu);
     }
+    public static void displayDifference(int [] nums)
+    {
+        
+        int sum =0;
+        for(int element: nums)
+        {
+            sum+=element;
+        }
+        double average = ((double)sum)/nums.length;
+
+      double [] newNums = new double [nums.length];
+      for(int i=0;i<newNums.length;i++)
+      {
+        newNums[i]  = nums[i]-average;    
+      }
+      System.out.println(Arrays.toString(newNums));
+
+    }
+   
 }
