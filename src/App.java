@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class App {
 
+    private static int[] array;
 
     public static void main(String[] args) throws Exception {
 
@@ -14,21 +15,23 @@ public class App {
         while (toContinue) {
             displayMenu(isFirstTime);
             String chosenOption = scanner.next();
-
+            System.out.print("Enter the array size: ");
+            int size = sc.nextInt();            
+            
             switch (chosenOption) {
                 case "1":
                     System.out.println("You have reached option 1 now the average will be calculated.");
                     System.out.println("After that all elements will be displayed as their differences with average.");
-                    App.displayDifference(null);
+                    App.displayDifference();
                     break;
                 case "2":
-                    findOddEvenSum(null);
+                    findOddEvenSum();
                     break;
                 case "3":
-                    findMax(null);
+                    findMax();
                     break;
                 case "4":
-                    findMin(null);
+                    findMin();
                     break;
                 case "999":
                     System.err.println("Exiting application..");
@@ -59,17 +62,17 @@ public class App {
         System.out.println(menu);
     }
 
-    public static void displayDifference(int[] nums) {
+    public static void displayDifference() {
 
         int sum = 0;
-        for (int element : nums) {
+        for (int element : array) {
             sum += element;
         }
-        double average = ((double) sum) / nums.length;
+        double average = ((double) sum) / array.length;
 
-        double[] newNums = new double[nums.length];
+        double[] newNums = new double[array.length];
         for (int i = 0; i < newNums.length; i++) {
-            newNums[i] = nums[i] - average;
+            newNums[i] = array[i] - average;
         }
         System.out.println(Arrays.toString(newNums));
 
@@ -89,20 +92,18 @@ public class App {
         System.out.println("Sum of elements with odd indexes: " + oddSum);
         System.out.println("Sum of elements with even indexes: " + evenSum);
     }
-    public static int findMax(int[] arr){
-        int max = arr[0];
-        for (int i = 1; i < arr.length; i++) {
-            if (arr[i] > max) {
-                max = arr[i];
+    public static int findMax(){
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] > max) {
+                max = array[i];
             }
         }
         return max;
     }
-    public static int findMin(int[] arr){
-        int min = arr[0];
-        for (int i = 1; i < arr.length; i++) {
-            if (arr[i] < min) {
-                min = arr[i];
+    public static int findMin(){
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] < min) {
+                min = array[i];
             }
         }
         return min;
