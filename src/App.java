@@ -1,7 +1,10 @@
+
 import java.util.Scanner;
 import java.util.Arrays;
 
 public class App {
+
+
     public static void main(String[] args) throws Exception {
 
         boolean toContinue = true;
@@ -18,7 +21,15 @@ public class App {
                     System.out.println("After that all elements will be displayed as their differences with average.");
                     App.displayDifference(null);
                     break;
-
+                case "2":
+                    findOddEvenSum(null);
+                    break;
+                case "3":
+                    findMax(null);
+                    break;
+                case "4":
+                    findMin(null);
+                    break;
                 case "999":
                     System.err.println("Exiting application..");
                     System.exit(0);
@@ -64,4 +75,36 @@ public class App {
 
     }
 
+
+    private static void findOddEvenSum(int[] array) {
+        int oddSum = 0;
+        int evenSum = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (i % 2 == 0) {
+                evenSum += array[i];
+            } else {
+                oddSum += array[i];
+            }
+        }
+        System.out.println("Sum of elements with odd indexes: " + oddSum);
+        System.out.println("Sum of elements with even indexes: " + evenSum);
+    }
+    public static int findMax(int[] arr){
+        int max = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        return max;
+    }
+    public static int findMin(int[] arr){
+        int min = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+        }
+        return min;
+    }
 }
