@@ -15,7 +15,9 @@ public class App {
                 case "1":
                     System.out.println("You have reached option 1.");
                     break;
-
+                case "2":
+                    findOddEvenSum();
+                    break;
                 case "999":
                     System.err.println("Exiting application..");
                     System.exit(0);
@@ -43,5 +45,18 @@ public class App {
         menu += "Option 999: Exit\n";
 
         System.out.println(menu);
+    }
+    private static void findOddEvenSum() {
+        int oddSum = 0;
+        int evenSum = 0;
+        for (int i = 0; i < array.length; i++) {
+          if (i % 2 == 0) {
+            evenSum += array[i];
+          } else {
+            oddSum += array[i];
+          }
+        }
+        System.out.println("Sum of elements with odd indexes: " + oddSum);
+        System.out.println("Sum of elements with even indexes: " + evenSum);
     }
 }
