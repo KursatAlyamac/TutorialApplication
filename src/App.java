@@ -17,8 +17,10 @@ public class App {
             displayMenu(isFirstTime);
             String chosenOption = scanner.next();
             System.out.print("Enter the array size: ");
-            int size = sc.nextInt();            
-            
+            int size = scanner.nextInt();            
+            if(isFirstTime){
+                createArray(size);
+            }
             switch (chosenOption) {
                 case "1":
                     System.out.println("You have reached option 1 now the average will be calculated.");
@@ -101,20 +103,22 @@ public class App {
         System.out.println("Sum of elements with odd indexes: " + oddSum);
         System.out.println("Sum of elements with even indexes: " + evenSum);
     }
-    public static int findMax(){
+    public static void findMax(){
+        int max = Integer.MIN_VALUE;
         for (int i = 1; i < array.length; i++) {
             if (array[i] > max) {
                 max = array[i];
             }
         }
-        return max;
+        System.out.println("Maximum element in the array is: " + max);
     }
-    public static int findMin(){
+    public static void findMin(){
+        int min = Integer.MAX_VALUE;
         for (int i = 1; i < array.length; i++) {
             if (array[i] < min) {
                 min = array[i];
             }
         }
-        return min;
+        System.out.println("Minimum element in the array is: " + min);
     }
 }
