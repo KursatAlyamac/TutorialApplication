@@ -49,13 +49,12 @@ public class App {
         scanner.close();
     }
 
-    public static int[] createArray(int size) {
-        int[] returnArray = new int[size];
+    public static void createArray(int size) {
+        array = new int[size];
         Random random = new Random();
         for (int i = 0; i < size; i++) {
-            returnArray[i] = random.nextInt(101);
+            array[i] = random.nextInt(101);
         }
-        return returnArray;
     }
 
     public static void displayMenu(boolean isFirstTime) {
@@ -89,7 +88,7 @@ public class App {
     }
 
 
-    private static void findOddEvenSum(int[] array) {
+    private static void findOddEvenSum() {
         int oddSum = 0;
         int evenSum = 0;
         for (int i = 0; i < array.length; i++) {
