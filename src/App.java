@@ -14,13 +14,15 @@ public class App {
         Scanner scanner = new Scanner(System.in);
 
         while (toContinue) {
-            displayMenu(isFirstTime);
-            String chosenOption = scanner.next();
-            System.out.print("Enter the array size: ");
-            int size = scanner.nextInt();            
-            if(isFirstTime){
+            if (isFirstTime) {
+                System.out.print("Enter the array size: ");
+                int size = scanner.nextInt();
                 createArray(size);
             }
+
+            displayMenu(isFirstTime);
+            String chosenOption = scanner.next();
+
             switch (chosenOption) {
                 case "1":
                     System.out.println("You have reached option 1 now the average will be calculated.");
@@ -67,7 +69,10 @@ public class App {
         }
 
         menu += "-----------------------------\n";
-        menu += "Option 1: Example\n";
+        menu += "Option 1: Display Difference with Avg\n";
+        menu += "Option 2: Find odd and even sums\n";
+        menu += "Option 3: Find maximum element\n";
+        menu += "Option 4: Find minimum element\n";
         menu += "Option 999: Exit\n";
 
         System.out.println(menu);
@@ -89,7 +94,6 @@ public class App {
 
     }
 
-
     private static void findOddEvenSum() {
         int oddSum = 0;
         int evenSum = 0;
@@ -103,7 +107,8 @@ public class App {
         System.out.println("Sum of elements with odd indexes: " + oddSum);
         System.out.println("Sum of elements with even indexes: " + evenSum);
     }
-    public static void findMax(){
+
+    public static void findMax() {
         int max = Integer.MIN_VALUE;
         for (int i = 1; i < array.length; i++) {
             if (array[i] > max) {
@@ -112,7 +117,8 @@ public class App {
         }
         System.out.println("Maximum element in the array is: " + max);
     }
-    public static void findMin(){
+
+    public static void findMin() {
         int min = Integer.MAX_VALUE;
         for (int i = 1; i < array.length; i++) {
             if (array[i] < min) {
