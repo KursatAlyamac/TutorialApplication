@@ -14,7 +14,9 @@ public class App {
 
             switch (chosenOption) {
                 case "1":
-                    System.out.println("You have reached option 1.");
+                    System.out.println("You have reached option 1 now the average will be calculated.");
+                    System.out.println("After that all elements will be displayed as their differences with average.");
+                    App.displayDifference(null);
                     break;
 
                 case "999":
@@ -45,23 +47,21 @@ public class App {
 
         System.out.println(menu);
     }
-    public static void displayDifference(int [] nums)
-    {
-        
-        int sum =0;
-        for(int element: nums)
-        {
-            sum+=element;
-        }
-        double average = ((double)sum)/nums.length;
 
-      double [] newNums = new double [nums.length];
-      for(int i=0;i<newNums.length;i++)
-      {
-        newNums[i]  = nums[i]-average;    
-      }
-      System.out.println(Arrays.toString(newNums));
+    public static void displayDifference(int[] nums) {
+
+        int sum = 0;
+        for (int element : nums) {
+            sum += element;
+        }
+        double average = ((double) sum) / nums.length;
+
+        double[] newNums = new double[nums.length];
+        for (int i = 0; i < newNums.length; i++) {
+            newNums[i] = nums[i] - average;
+        }
+        System.out.println(Arrays.toString(newNums));
 
     }
-   
+
 }
